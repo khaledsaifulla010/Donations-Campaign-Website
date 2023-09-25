@@ -2,13 +2,29 @@ import PropTypes from 'prop-types';
 import swal from 'sweetalert';
 const SingleDonationCard = ({donationData}) => {
 
-    const { image, category,description, price,text_button_bg  } = donationData ;
+    const {id, image, category,description, price,text_button_bg  } = donationData ;
 
-    const handleDonateButton = () =>{0
-            
+    const handleDonateButton = () =>{
+        const addedDonationArray =[];
+        const donation = JSON.parse(localStorage.getItem("donations"));
+
+        if(!donation){
+            addedDonationArray.push(donationData);
+            localStorage.setItem("donations", JSON.stringify(addedDonationArray));
             swal("Good job!", "Your Donate are Successfully Added!", "success");
-        
-        
+        }
+        else{
+            const isExist = donation.find((donationData) => donationData.id === id);
+
+            if(!isExist){
+                addedDonationArray.push(...donation, donationData);
+                localStorage.setItem("donations", JSON.stringify(addedDonationArray));
+                swal("Good job!", "Your Donate are Successfully Added!", "success");
+            }
+            else{
+                swal("Warning!", "Your are Already Donated!", "error");
+            }
+        }
         
     }
     
