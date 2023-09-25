@@ -12,13 +12,10 @@ const SingleDonation = () => {
     const AllDonationData = useLoaderData();
 
     useEffect(() => {
-        const findDonationData = AllDonationData.find(donationData => donationData.id = id)
+        const findDonationData = AllDonationData.find((donationData) => donationData.id == id);
+        setDonationData(findDonationData);
 
-        setDonationData(findDonationData)
     }, [id, AllDonationData]);
-
-    console.log(donationData)
-
 
     return (
         <div>
