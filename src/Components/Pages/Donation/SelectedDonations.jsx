@@ -9,7 +9,7 @@ const SelectedDonations = ({ donationData }) => {
                     <figure><img className="lg:mt-0  h-[223px] mt-4" src={image} /></figure>
                     </div>
                     <div className="card-body">
-                        <p className="p-3  mb-2 text-center font-semibold rounded-xl mt-4" style={{ background: category_bg, color: text, width: "89px" }}> {category} </p>
+                        <p className="p-3  lg:mb-2  md:mb-4 mb-8 text-center font-semibold rounded-xl mt-4 lg:w-[89px]" style={{ background: category_bg, color: text  }}> {category} </p>
                         <h2 style={{ color: text }} className="card-title"> {title} </h2>
                         <h5 style={{ color: text }} className='font-semibold text-lg'> <span>$</span>{price} </h5>
                         <button style={{ backgroundColor: text_button_bg }} className="p-2 text-white font-semibold rounded-xl w-40">View Details</button>

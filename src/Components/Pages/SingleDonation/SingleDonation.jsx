@@ -6,7 +6,6 @@ import SingleDonationCard from "./SingleDonationCard";
 const SingleDonation = () => {
 
     const [donationData, setDonationData] = useState({})
-
     const { id } = useParams()
 
     const AllDonationData = useLoaderData();
@@ -20,6 +19,7 @@ const SingleDonation = () => {
     return (
         <div>
             <SingleDonationCard donationData= {donationData}></SingleDonationCard>
+           
         </div>
     );
 };
