@@ -1,6 +1,15 @@
 
+const Banner = ({setSearch}) => {
 
-const Banner = () => {
+    
+    const handleSearch = (e) =>{
+        e.preventDefault();
+        
+        setSearch(e.target[0].value);
+    }
+   
+
+
     return (
         <div className="m-8">
             <div>
@@ -12,10 +21,12 @@ const Banner = () => {
                                 <div>
                                     <h2 className="font-bold text-center lg:text-4xl md:text-2xl text-l">I Grow By Helping People In Need</h2>
                                 </div>
-                                <div className="flex items-center justify-center lg:mt-8 md:mt-4 mt-2">
-                                    <input type="text" className="border-2 lg:w-[420px] lg:h-[40px] md:w-[300px] md:h-[40px] [50px] h-[40px] p-2 rounded-xl" placeholder="Search here...." />
-                                    <button className="bg-[#FF444A] p-2 rounded-r-xl text-white font-semibold absolute lg:ml-96 md:ml-64 ml-36">Search</button>
-                                </div>
+                                <form onSubmit={handleSearch}>
+                                    <div className="flex items-center justify-center lg:mt-8 md:mt-4 mt-2">
+                                        <input type="text" className="border-2 lg:w-[420px] lg:h-[40px] md:w-[300px] md:h-[40px] [50px] h-[40px] p-2 rounded-xl text-black" placeholder="Search here...." />
+                                        <button className="bg-[#FF444A] p-2 rounded-r-xl text-white font-semibold absolute lg:ml-96 md:ml-64 ml-36">Search</button>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                     </div>
